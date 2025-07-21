@@ -1,0 +1,50 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.space-left{
+  padding-left: 15px;
+}
+mat-toolbar{
+  mat-toolbar-row{
+    .login-btn{
+      background-color: black;
+      font-size: 15px;
+      color:white;
+      min-width: 40px;
+      border:2px solid white;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+
+    }
+    .login-btn:hover {
+      color: cornflowerblue; /* Darker shade on hover */
+
+
+    }
+
+  }
+}
+.logout-icon{
+  margin-left: 10px;
+  cursor: pointer;
+}
+.mat-sidenav-container{
+  position: fixed;
+  height:99%;
+  min-height: 99%;
+  width: 100%;
+  min-width: 100%;
+  background-color:black;
+  color: white;
+}
+.mat-sidenav{
+  background-color:white;
+  width:200px;
+  min-width: 200px;
+  padding: 16px;
+}
+.mat-sidenav{
+  height: 100vh;
+  z-index:1;
+}
+

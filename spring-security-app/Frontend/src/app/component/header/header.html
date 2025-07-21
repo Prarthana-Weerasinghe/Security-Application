@@ -1,0 +1,100 @@
+<!--<mat-toolbar color="primary" role="heading">-->
+<!--  <mat-toolbar-row style="background-color: black; color: white;">-->
+<!--    <mat-icon style="cursor: pointer; color:white"(click)="toggleMenu()">menu</mat-icon>-->
+<!--    <span class="example-spacer"></span>-->
+<!--    <span> Springboot Academy</span>-->
+<!--    <span class="example-spacer"></span>-->
+<!--    <mat-icon style="cursor: pointer; color: white">logout</mat-icon>-->
+<!--  </mat-toolbar-row>-->
+<!--</mat-toolbar>-->
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--      <mat-icon style="cursor: pointer; color:white" (click)="toggleMenu()">menu</mat-icon>-->
+<!--      <span class="example-spacer"></span>-->
+<!--  <div class="container-fluid"> -->
+<!--    <a class="navbar-brand" href="#">QuickRide</a>-->
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page"  routerLink="/home"> Home </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a  class="nav-link active" aria-current="page" routerLink="/admin"-->
+<!--              *ngIf="user.roleEqual('Admin')" > Admin </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" routerLink="/user"-->
+<!--             *ngIf="user.roleEqual('User')"> User </a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--      <button *ngIf="!isLoggedIn()" type="submit" class="btn btn-primary" routerLink="/login"> Login </button>-->
+<!--      <button *ngIf="isLoggedIn()" type="submit" class="btn btn-danger m-2" (click)="logout()">Logout</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<mat-toolbar>
+  <mat-toolbar-row style="background-color: black; color: white;">
+  <!--    left-drawer-toggle-->
+    <mat-icon style="cursor: pointer; color:white" (click)="toggleMenu()">menu</mat-icon>
+    <span class="space-left">
+      <a class="navbar-brand" href="#">QuickRide</a>
+    </span>
+    <span class="space-left">
+      <a class="nav-link active" aria-current="page"  routerLink="/home"> Home </a>
+    </span>
+    <span class="space-left">
+      <a  class="nav-link active" aria-current="page" routerLink="/admin"
+          *ngIf="user.roleEqual('Admin')" > Admin </a>
+    </span>
+    <span class="space-left">
+      <a class="nav-link active" aria-current="page" routerLink="/user"
+         *ngIf="user.roleEqual('User')"> User </a>
+    </span>
+    <span class="example-spacer"></span>
+    <button *ngIf="!isLoggedIn()" type="submit" class="login-btn" routerLink="/login"> Login </button>
+    <mat-icon *ngIf="isLoggedIn()" style="cursor: pointer" (click)="toggleRightMenu()">account_circle</mat-icon>
+    <mat-icon *ngIf="isLoggedIn()"  class="logout-icon" (click)="logout()">logout</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #leftDrawer mode="side" position="start">
+    <mat-list>
+      <a mat-list-item routerLink="/cars" routerLinkActive="active">
+        <mat-icon>electric_car</mat-icon>
+        <span>Cars</span>
+      </a>
+      <a mat-list-item routerLink="/fuel-type" routerLinkActive="active">
+        <mat-icon>local_gas_station</mat-icon>
+        <span>Fuel Type</span>
+      </a>
+
+      <a mat-list-item routerLink="/services" routerLinkActive="active">
+        <mat-icon>build</mat-icon>
+        <span>Services</span>
+      </a>
+
+      <a mat-list-item routerLink="/reports" routerLinkActive="active">
+        <mat-icon>analytics</mat-icon>
+        <span>Reports</span>
+      </a>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav #rightDrawer mode="side" position="end">
+    <mat-list>
+      <a mat-list-item routerLink="/cars" routerLinkActive="active">
+        <mat-icon>person</mat-icon>
+        <span>Person</span>
+      </a>
+
+      <a mat-list-item routerLink="/cars" routerLinkActive="active">
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </a>
+
+    </mat-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

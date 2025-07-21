@@ -1,0 +1,25 @@
+.active {
+  background-color:rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #fff;
+}
+mat-icon {
+  margin-right: 10px;
+}
+.mat-drawer{
+  background-color:white;
+  width:200px;
+  min-width: 200px;
+  padding: 16px;
+}
+.mat-drawer-container{
+  position: fixed;
+  height:99%;
+  min-height: 99%;
+  width: 100%;
+  min-width: 100%;
+  background-color: black;
+  color: white;
+}
+
+
+
